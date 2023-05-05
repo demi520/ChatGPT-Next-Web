@@ -57,7 +57,7 @@ import { ListItem, Modal, showModal } from "./ui-lib";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Path } from "../constant";
 import { Avatar } from "./emoji";
-import { MaskAvatar, MaskConfig } from "./mask";
+import { MaskAvatar, MaskConfig } from "./new-mask";
 import {
   DEFAULT_MASK_AVATAR,
   DEFAULT_MASK_ID,
@@ -67,7 +67,6 @@ import {
 const Markdown = dynamic(async () => (await import("./markdown")).Markdown, {
   loading: () => <LoadingIcon />,
 });
-
 function exportMessages(messages: Message[], topic: string) {
   const mdText =
     `# ${topic}\n\n` +

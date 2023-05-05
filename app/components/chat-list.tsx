@@ -14,7 +14,7 @@ import { useChatStore } from "../store";
 import Locale from "../locales";
 import { Link, useNavigate } from "react-router-dom";
 import { Path } from "../constant";
-import { MaskAvatar } from "./mask";
+import { MaskAvatar } from "./new-mask";
 import { Mask } from "../store/mask";
 
 export function ChatItem(props: {
