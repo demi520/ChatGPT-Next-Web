@@ -20,7 +20,7 @@ import DarkIcon from "../icons/dark.svg";
 import AutoIcon from "../icons/auto.svg";
 import BottomIcon from "../icons/bottom.svg";
 import StopIcon from "../icons/pause.svg";
-
+import ExportImage from "../icons/export-image.svg";
 import {
   Message,
   SubmitKey,
@@ -67,6 +67,21 @@ import {
 const Markdown = dynamic(async () => (await import("./markdown")).Markdown, {
   loading: () => <LoadingIcon />,
 });
+const HtmlToImage = dynamic(
+  async () => (await import("./html-to-image")).HtmlToImage,
+  {
+    loading: () => <LoadingIcon />,
+    ssr: false,
+  },
+);
+function exportJpeg(topic: string, dataURL: string) {
+  const link = document.createElement("a");
+  link.href = dataURL;
+  link.download = `${topic}-${new Date().toLocaleString()}.jpg`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 function exportMessages(messages: Message[], topic: string) {
   const mdText =
     `# ${topic}\n\n` +
@@ -616,7 +631,34 @@ export function Chat() {
   const location = useLocation();
   const isChat = location.pathname === Path.Chat;
   const autoFocus = !isMobileScreen || isChat; // only focus in chat page
+  // export image
+  const dataUrl = useRef("");
 
+  async function exportImage(topic: string) {
+    showModal({
+      title: Locale.Export.Image,
+      children: (
+        <div className={styles["image-body"]}>
+          <HtmlToImage
+            getDataUrl={(url) => {
+              dataUrl.current = url;
+            }}
+          />
+        </div>
+      ),
+      actions: [
+        <IconButton
+          key="exportJpeg"
+          icon={<ExportImage />}
+          bordered
+          text={Locale.Chat.Actions.ExportImage}
+          onClick={() => {
+            dataUrl.current && exportJpeg(topic, dataUrl.current);
+          }}
+        />,
+      ],
+    });
+  }
   return (
     <div className={styles.chat} key={session.id}>
       <div className="window-header">
@@ -673,6 +715,16 @@ export function Chat() {
               />
             </div>
           )}
+          <div className={styles["window-action-button"]}>
+            <IconButton
+              icon={<ExportImage />}
+              bordered
+              title={Locale.Chat.Actions.ExportImage}
+              onClick={() => {
+                exportImage(session.topic);
+              }}
+            />
+          </div>
         </div>
 
         <PromptToast
