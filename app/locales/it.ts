@@ -20,6 +20,8 @@ const it: LocaleType = {
       Stop: "Stop",
       Retry: "Riprova",
       Delete: "Delete",
+      ExportImage: "Export All Messages as Image",
+      GeneratingImage: "Generating Image",
     },
     Rename: "Rinomina Chat",
     Typing: "Typing…",
@@ -42,6 +44,8 @@ const it: LocaleType = {
     Download: "Scarica",
     MessageFromYou: "Messaggio da te",
     MessageFromChatGPT: "Messaggio da ChatGPT",
+    Image: "Export Image",
+    Failed: "Export Failed",
   },
   Memory: {
     Title: "Prompt di memoria",

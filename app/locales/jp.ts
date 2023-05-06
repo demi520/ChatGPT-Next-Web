@@ -20,6 +20,8 @@ const jp: LocaleType = {
       Stop: "停止",
       Retry: "リトライ",
       Delete: "Delete",
+      ExportImage: "导出图片",
+      GeneratingImage: "正在生成图片",
     },
     Rename: "チャットの名前を変更",
     Typing: "入力中…",
@@ -42,6 +44,8 @@ const jp: LocaleType = {
     Download: "ファイルをダウンロード",
     MessageFromYou: "あなたからのメッセージ",
     MessageFromChatGPT: "ChatGPTからのメッセージ",
+    Image: "导出图片",
+    Failed: "导出失败",
   },
   Memory: {
     Title: "履歴メモリ",

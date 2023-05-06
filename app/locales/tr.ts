@@ -20,6 +20,8 @@ const tr: LocaleType = {
       Stop: "Durdur",
       Retry: "Tekrar Dene",
       Delete: "Delete",
+      ExportImage: "Export All Messages as Image",
+      GeneratingImage: "Generating Image",
     },
     Rename: "Sohbeti Yeniden Adlandır",
     Typing: "Yazıyor…",
@@ -42,6 +44,8 @@ const tr: LocaleType = {
     Download: "İndir",
     MessageFromYou: "Sizin Mesajınız",
     MessageFromChatGPT: "ChatGPT'nin Mesajı",
+    Image: "Export Image",
+    Failed: "Export Failed",
   },
   Memory: {
     Title: "Bellek Komutları",
