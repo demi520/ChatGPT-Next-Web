@@ -19,6 +19,8 @@ const cn = {
       Stop: "停止",
       Retry: "重试",
       Delete: "删除",
+      ExportImage: "导出图片",
+      GeneratingImage: "正在生成图片",
     },
     Rename: "重命名对话",
     Typing: "正在输入…",
@@ -41,6 +43,8 @@ const cn = {
     Download: "下载文件",
     MessageFromYou: "来自你的消息",
     MessageFromChatGPT: "来自 ChatGPT 的消息",
+    Image: "导出图片",
+    Failed: "导出失败",
   },
   Memory: {
     Title: "历史摘要",

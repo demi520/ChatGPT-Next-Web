@@ -335,6 +335,7 @@
   padding: 20px;
   padding-bottom: 40px;
   position: relative;
+  background-color: var(--white);
 }
 
 .chat-body-title {
@@ -569,4 +570,11 @@
   align-items: center;
   height: 100%;
   width: 100%;
+}
+
+.image-body {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

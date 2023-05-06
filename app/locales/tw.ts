@@ -19,6 +19,8 @@ const tw: LocaleType = {
       Stop: "停止",
       Retry: "重試",
       Delete: "刪除",
+      ExportImage: "匯出圖片",
+      GeneratingImage: "正在生成圖片",
     },
     Rename: "重命名對話",
     Typing: "正在輸入…",
@@ -41,6 +43,8 @@ const tw: LocaleType = {
     Download: "下載檔案",
     MessageFromYou: "來自您的訊息",
     MessageFromChatGPT: "來自 ChatGPT 的訊息",
+    Image: "匯出圖片",
+    Failed: "匯出失敗",
   },
   Memory: {
     Title: "上下文記憶 Prompt",
