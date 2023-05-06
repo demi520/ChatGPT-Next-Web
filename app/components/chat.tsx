@@ -20,7 +20,7 @@ import DarkIcon from "../icons/dark.svg";
 import AutoIcon from "../icons/auto.svg";
 import BottomIcon from "../icons/bottom.svg";
 import StopIcon from "../icons/pause.svg";
-import ExportImage from "../icons/export-image.svg";
+import ExportImage from "../icons/expImage.svg";
 import {
   Message,
   SubmitKey,
