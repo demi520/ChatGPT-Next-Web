@@ -80,15 +80,6 @@ export function useSwitchTheme() {
   }, [config.theme]);
 }
 
-function exportJpeg(topic: string, dataURL: string) {
-  const link = document.createElement("a");
-  link.href = dataURL;
-  link.download = `${topic}-${new Date().toLocaleString()}.jpg`;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
 const useHasHydrated = () => {
   const [hasHydrated, setHasHydrated] = useState<boolean>(false);
 

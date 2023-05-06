@@ -702,6 +702,16 @@ export function Chat() {
               }}
             />
           </div>
+          <div className="window-action-button">
+            <IconButton
+              icon={<ExportImage />}
+              bordered
+              title={Locale.Chat.Actions.ExportImage}
+              onClick={() => {
+                exportImage(session.topic);
+              }}
+            />
+          </div>
           {!isMobileScreen && (
             <div className="window-action-button">
               <IconButton
@@ -715,16 +725,6 @@ export function Chat() {
               />
             </div>
           )}
-          <div className={styles["window-action-button"]}>
-            <IconButton
-              icon={<ExportImage />}
-              bordered
-              title={Locale.Chat.Actions.ExportImage}
-              onClick={() => {
-                exportImage(session.topic);
-              }}
-            />
-          </div>
         </div>
 
         <PromptToast
@@ -735,6 +735,7 @@ export function Chat() {
       </div>
 
       <div
+        id="chat-body"
         className={styles["chat-body"]}
         ref={scrollRef}
         onScroll={(e) => onChatBodyScroll(e.currentTarget)}
